@@ -13,12 +13,14 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { InputTextModule } from 'primeng/inputtext';
+import { DashboardHomeComponent } from './dashboard/dashboard-home/dashboard-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormulaireMedicalComponent,
     DossierListeComponent,
+    DashboardHomeComponent,
   ],
   imports: [
     BrowserModule,
