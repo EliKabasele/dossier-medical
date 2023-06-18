@@ -1,0 +1,270 @@
+  <div class="row p-8">
+    <p-card  header="DOSSIER MEDICAL">
+      <form [formGroup]="medicalForm" (ngSubmit)="onSubmitForm()">
+        <!-- I Identification -->
+        <p-panel header="I. Identification" [toggleable]="true">
+            <div formGroupName="identification">
+              <div class="formgrid grid">
+                <!-- Nom Input -->
+                <div class="field col">
+                  <div class="flex flex-column gap-2">
+                    <label htmlFor="nom">Nom</label>
+                    <input
+                      type="text" 
+                      id="nom"
+                      formControlName="nom"
+                      pInputText 
+                    >
+                  </div >
+                </div>
+                <!-- Prenom Input -->
+                <div class="field col">
+                  <div class="flex flex-column gap-2">
+                    <label htmlFor="prenom">Prénom</label>
+                    <input
+                      type="text" 
+                      id="prenom"
+                      formControlName="prenom"
+                      pInputText
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="formgrid grid">
+                <!-- dateDeNaissance Input -->
+                <div class="field col">
+                  <div class="flex flex-column gap-2">
+                    <label for="dateDeNaissance">Date de naissance</label>
+                    <input
+                      type="text" 
+                      id="dateDeNaissance"
+                      formControlName="dateDeNaissance"
+                      pInputText
+                    >
+                  </div>
+                </div>
+                <!-- lieuDeNaissance Input -->
+                <div class="field col">
+                  <div class="flex flex-column gap-2">
+                    <label for="lieuDeNaissance">Lieu de naissance</label>
+                    <input
+                      type="text" 
+                      id="lieuDeNaissance"
+                      formControlName="lieuDeNaissance"
+                      pInputText
+                    >
+                  </div>
+                </div>             
+              </div>             
+              <div class="formgrid grid">
+                <!-- ethnie Input -->
+                <div class="field col">
+                  <div class="flex flex-column gap-2">
+                    <label for="ethnie">Ethnie</label>
+                    <input
+                      type="text" 
+                      id="ethnie"
+                      formControlName="ethnie"
+                      pInputText
+                    >
+                  </div>
+                </div>
+                <!-- profession Input -->
+                <div class="field col">
+                  <div class="flex flex-column gap-2">
+                    <label for="profession">Profession</label>
+                    <input
+                      type="text" 
+                      id="profession"
+                      formControlName="profession"
+                      pInputText
+                    >
+                  </div>
+                </div>             
+              </div>
+              <div class="formgrid grid">
+                <!-- lieuDeResidence Input -->
+                <div class="field col">
+                  <div class="flex flex-column gap-2">
+                    <label for="lieuDeResidence">Lieu de residence</label>
+                    <input
+                      type="text" 
+                      id="lieuDeResidence"
+                      formControlName="lieuDeResidence"
+                      pInputText
+                    >
+                  </div>
+                </div>
+                <!-- contactPerson Input -->
+                <div class="field col">
+                  <div class="flex flex-column gap-2">
+                    <label for="contactPerson">Personne à contacter</label>
+                    <input
+                      type="text" 
+                      id="contactPerson"
+                      formControlName="contactPerson"
+                      pInputText
+                    >
+                  </div>
+                </div>                
+              </div>
+            </div>        
+        </p-panel>
+
+        <p-panel header="II. Antécédents" [toggleable]="true">
+          <div formGroupName="antecedents">
+            <div class="formgrid grid">
+              <!-- Médicaux Input -->
+              <div class="field col">
+                <div class="flex flex-column gap-2">
+                  <label for="medicaux">Médicaux  </label>
+                  <textarea 
+                    type="text" 
+                    id="medicaux"
+                    formControlName="medicaux"
+                    rows="4" 
+                    pInputTextarea 
+                  ></textarea>
+                </div>
+              </div>
+              <!-- Chirurgicaux Input -->
+              <div class="field col">
+                <div class="flex flex-column gap-2">
+                  <label for="chirurgicaux">Chirurgicaux</label>
+                  <textarea
+                    type="text" 
+                    id="chirurgicaux"
+                    formControlName="chirurgicaux"
+                    rows="4" 
+                    pInputTextarea
+                  ></textarea>
+                </div>
+              </div>             
+            </div>
+            <div class="formgrid grid">
+              <!-- immunoAllergics Input -->
+              <div class="field col">
+                <div class="flex flex-column gap-2">
+                  <label for="immunoAllergics">Immuno-allergiques</label>
+                  <textarea
+                    type="text" 
+                    id="immunoAllergics"
+                    formControlName="immunoAllergics"
+                    rows="4" 
+                    pInputTextarea
+                  ></textarea>
+                </div>
+              </div>
+              <!-- toxicologics Input -->
+              <div class="field col">
+                <div class="flex flex-column gap-2">
+                  <label for="toxicologics">Toxicologiques</label>
+                  <textarea
+                    type="text" 
+                    id="toxicologics"
+                    formControlName="toxicologics"
+                    rows="4" 
+                    pInputTextarea
+                  ></textarea>
+                </div>
+              </div>            
+            </div>
+            <div class="formgrid grid">
+              <!-- familiaux Input -->
+              <div class="field col">
+                <div class="flex flex-column gap-2">
+                  <label for="familiaux">Familiaux</label>
+                  <textarea
+                    type="text" 
+                    id="familiaux"
+                    formControlName="familiaux"
+                    rows="4" 
+                    pInputTextarea
+                  ></textarea>
+                </div> 
+              </div>
+              <div class="field col"></div>
+            </div>                 
+          </div>
+        </p-panel>
+      
+        <p-panel header="III. Histoire de la maladie" [toggleable]="true">
+          <textarea class="fullwidthTxtArea"
+              type="text" 
+              id="histoireMaladie"
+              formControlName="histoireMaladie"
+              rows="4" 
+              pInputTextarea
+          ></textarea>
+        </p-panel>
+
+        <p-panel header="IV. Examen physique" [toggleable]="true">
+          <textarea class="fullwidthTxtArea"
+              type="text" 
+              id="examenPhysic"
+              formControlName="examenPhysic"
+              rows="4" 
+              pInputTextarea
+          ></textarea>
+        </p-panel>
+
+        <p-panel header="V. Hypothèse diagnostic" [toggleable]="true">
+          <textarea class="fullwidthTxtArea"
+              type="text" 
+              id="hypotheseDiagnostic"
+              formControlName="hypotheseDiagnostic"
+              rows="4" 
+              pInputTextarea
+          ></textarea>
+        </p-panel>
+
+        <p-panel header="VI. Bilan radiologique" [toggleable]="true">
+          <textarea class="fullwidthTxtArea"
+              type="text" 
+              id="bilanRadiologic"
+              formControlName="bilanRadiologic"
+              rows="4" 
+              pInputTextarea
+          ></textarea>
+        </p-panel>
+
+        <p-panel header="VII. Bilan biologique" [toggleable]="true">
+          <textarea class="fullwidthTxtArea"
+              type="text" 
+              id="bilanBiologic"
+              formControlName="bilanBiologic"
+              rows="4" 
+              pInputTextarea
+          ></textarea>
+        </p-panel>
+
+        <p-panel header="VIII. Diagnostiv retenu" [toggleable]="true">
+          <textarea class="fullwidthTxtArea"
+              type="text" 
+              id="diagnosticRetenu"
+              formControlName="diagnosticRetenu"
+              rows="4" 
+              pInputTextarea
+          ></textarea>
+        </p-panel>
+
+        <p-panel header="IX. Traitement" [toggleable]="true">
+          <textarea class="fullwidthTxtArea"
+              type="text" 
+              id="traitement"
+              formControlName="traitement"
+              rows="4" 
+              pInputTextarea
+          ></textarea>
+        </p-panel>
+
+        <div class="grid mt-3" style="display: flex; justify-content: flex-end">
+            <p-button type="submit" label="Sauvergarder"></p-button>
+            <p-button type="button"
+              label="Anuler"
+              styleClass="p-button-secondary"
+              [style]="{ 'margin-left': '.5em' }"></p-button>
+        </div>
+      </form>
+    </p-card> 
+  </div>
