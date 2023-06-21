@@ -14,6 +14,11 @@ import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { InputTextModule } from 'primeng/inputtext';
 import { DashboardHomeComponent } from './dashboard/dashboard-home/dashboard-home.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { FooterMenuComponent } from './shared/footer-menu/footer-menu.component';
+import { HeaderMenuComponent } from './shared/header-menu/header-menu.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
@@ -21,6 +26,10 @@ import { DashboardHomeComponent } from './dashboard/dashboard-home/dashboard-hom
     FormulaireMedicalComponent,
     DossierListeComponent,
     DashboardHomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    FooterMenuComponent,
+    HeaderMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +42,7 @@ import { DashboardHomeComponent } from './dashboard/dashboard-home/dashboard-hom
     ButtonModule,
     PanelModule,
     InputTextModule,
+    MenubarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
