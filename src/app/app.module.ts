@@ -19,6 +19,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -59,6 +60,7 @@ import { DashboardComponent } from './dossier-medical/Dashboard/dashboard/dashbo
     MatInputModule,
     MatAutocompleteModule,
     MatButtonModule,
+    MatCardModule,
 
     // primeng-Modules
     CardModule,
