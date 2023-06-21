@@ -16,7 +16,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DashboardHomeComponent } from './dashboard/dashboard-home/dashboard-home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { FooterMenuComponent } from './shared/footer-menu/footer-menu.component';
 import { HeaderMenuComponent } from './shared/header-menu/header-menu.component';
 import { MenubarModule } from 'primeng/menubar';
 
@@ -28,7 +27,6 @@ import { MenubarModule } from 'primeng/menubar';
     DashboardHomeComponent,
     HeaderComponent,
     FooterComponent,
-    FooterMenuComponent,
     HeaderMenuComponent,
   ],
   imports: [
