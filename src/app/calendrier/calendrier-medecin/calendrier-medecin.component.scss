@@ -1,0 +1,33 @@
+.calendar-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-section {
+  width: 48%;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  button[type="submit"] {
+    margin-top: 10px;
+  }
+}
+
+p-table {
+  margin-top: 20px;
+}
+
+button {
+  margin-right: 5px;
+}
