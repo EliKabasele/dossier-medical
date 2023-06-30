@@ -1,6 +1,5 @@
-  <div class="row p-8">
     <p-card  header="DOSSIER MEDICAL">
-      <form [formGroup]="medicalForm" (ngSubmit)="onSubmitForm()">
+      <form [formGroup]="medicalForm" (ngSubmit)="onSubmitForm()"  class="p-7 pt-3 pb-3">
         <!-- I Identification -->
         <p-panel header="I. Identification" [toggleable]="true">
             <div formGroupName="identification">
@@ -259,12 +258,10 @@
         </p-panel>
 
         <div class="grid mt-3" style="display: flex; justify-content: flex-end">
-            <p-button type="submit" label="Sauvergarder"></p-button>
-            <p-button type="button"
-              label="Anuler"
+            <p-button type="submit" label="Sauvergarder" icon="pi pi-check"></p-button>
+            <p-button type="button" label="Anuler" icon="pi pi-times"
               styleClass="p-button-secondary"
-              [style]="{ 'margin-left': '.5em' }"></p-button>
+              class="ml-3"></p-button>
         </div>
       </form>
     </p-card> 
-  </div>
