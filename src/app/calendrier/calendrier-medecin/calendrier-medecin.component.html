@@ -1,0 +1,74 @@
+
+<div class="calendar-container">
+  <div class="calendar-section">
+    <h3>Add Event</h3>
+    <button pButton icon="pi pi-plus" (click)="toggleAddEventForm()">Add Event</button>
+
+    <form *ngIf="showAddEventForm" (submit)="createEvent(newEventForm) ">
+      <input type="text" name="name" placeholder="Event Name" required [(ngModel)]="newEventForm.name" (ngModelOptions)="{ standalone: true }">
+      <input type="date" name="date" placeholder="Date" required [(ngModel)]="newEventForm.date" (ngModelOptions)="{ standalone: true }">
+      <input type="time" name="time" placeholder="Time" required [(ngModel)]="newEventForm.time" (ngModelOptions)="{ standalone: true }">
+      <button type="submit" >Add Event</button>
+    </form>
+
+
+
+    <!-- Ereignisse für das ausgewählte Datum anzeigen -->
+    <p-table [value]="getEventsForSelectedDate()">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Event Name</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-event>
+        <tr>
+          <td>{{ event.name }}</td>
+          <td>{{ event.date }}</td>
+          <td>{{ event.time }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <div class="calendar-section">
+    <!-- Tabelle -->
+    <p-table [value]="events">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Event Name</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-event>
+        <tr>
+          <td>{{ event.name }}</td>
+          <td>{{ event.date }}</td>
+          <td>{{ event.time }}</td>
+          <td>
+            <button pButton icon="pi pi-pencil" (click)="editEvent(event)"></button>
+            <button pButton icon="pi pi-trash" (click)="deleteEvent(event)"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+    <!-- Formular zum Hinzufügen/Bearbeiten -->
+    
+    <div *ngIf="selectedEvent || showOtherForm">
+      <h3>{{ selectedEvent.id ? 'Edit Event' : 'Add Event' }}</h3>
+      
+      <form (click)="toggleOtherForm()" (ngSubmit)="saveEvent(selectedEvent)">
+        <input type="text" [(ngModel)]="selectedEvent.name" [ngModelOptions]="{ standalone: true }" placeholder="Event Name" required>
+        <input type="date" [(ngModel)]="selectedEvent.date" [ngModelOptions]="{ standalone: true }" placeholder="Date" required>
+        <input type="time" [(ngModel)]="selectedEvent.time" [ngModelOptions]="{ standalone: true }" placeholder="Time" required>
+
+        <button type="submit" pButton label="Save" (click)="updateEvent(selectedEvent)" ></button>
+        <button type="button" pButton label="Cancel" (click)="cancelEdit();"></button>
+      </form>
+    </div>
+  </div>
+</div>

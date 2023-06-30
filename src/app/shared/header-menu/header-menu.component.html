@@ -1,0 +1,17 @@
+<p-menubar [model]="items">
+  <div>
+    <button type="button"
+      pButton
+      label="Se connecter"
+      icon="pi pi-arrow-circle-right"
+      style="margin-left:.25em" (click)="connect($event)">
+    </button>
+
+    <button type="button"
+      pButton label="Se déconnecter"
+      icon="pi pi-power-off"
+      style="margin-left:.25em"
+      class="p-button-secondary" (click)="disconnect($event)">
+    </button>
+  </div>
+</p-menubar>
