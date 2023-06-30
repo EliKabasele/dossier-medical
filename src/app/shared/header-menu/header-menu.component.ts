@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -8,9 +9,21 @@ import { MenuItem } from 'primeng/api';
 })
 export class HeaderMenuComponent implements OnInit {
   items: MenuItem[];
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.items = initialiseItemElements();
+  }
+
+  connect(event: any) {
+    // Logik für die Anmeldung
+    console.log('Anmeldung');
+    this.router.navigate(['signin']);
+  }
+
+  disconnect(event: any) {
+    // Logik für die Abmeldung
+    console.log('Abmeldung');
   }
 }
 function initialiseItemElements(): MenuItem[] {

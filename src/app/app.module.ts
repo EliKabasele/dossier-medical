@@ -22,12 +22,16 @@ import { MenubarModule } from 'primeng/menubar';
 import { CalendrierMedecinComponent } from './calendrier/calendrier-medecin/calendrier-medecin.component';
 import { CalendarModule } from 'primeng/calendar';
 import { TableModule } from 'primeng/table';
-
+//import {AngularFireModule} from '@angular/fire/compat';
 
 // Firebase-SDK
 import firebase from 'firebase/compat/app'; // Firebase-Import
 import 'firebase/compat/auth'; // Firebase-Authentifizierungsimport
-import 'firebase/compat/firestore'; // Firestore-Import
+import 'firebase/compat/firestore';
+import { SigninComponent } from './signin/signin.component'; // Firestore-Import
+import {AngularFireAuthModule} from '@angular/fire/compat/auth'
+import { AuthenticationService } from './services/authentication.service';
+import { AngularFireModule } from '@angular/fire/compat';
 
 // Importieren Sie andere Firebase-Module, die Sie verwenden möchten
 // Konfigurationsdaten für Ihre Firebase-App
@@ -54,6 +58,7 @@ firebase.initializeApp(firebaseConfig);
     FooterComponent,
     HeaderMenuComponent,
     CalendrierMedecinComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,9 +77,12 @@ firebase.initializeApp(firebaseConfig);
     CalendarModule,
     TableModule,
     
+    //Firebase
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
     
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

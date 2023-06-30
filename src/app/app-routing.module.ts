@@ -4,6 +4,7 @@ import { FormulaireMedicalComponent } from './dossier-medical/formulaire-medical
 import { DossierListeComponent } from './dossier-medical/dossier-liste/dossier-liste.component';
 import { DashboardHomeComponent } from './dashboard/dashboard-home/dashboard-home.component';
 import { CalendrierMedecinComponent } from './calendrier/calendrier-medecin/calendrier-medecin.component';
+import { SigninComponent } from './signin/signin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'calendrier-medecin',
     component: CalendrierMedecinComponent,
+  },
+  {
+    path: 'signin',
+    component: SigninComponent,
   },
 ];
 
