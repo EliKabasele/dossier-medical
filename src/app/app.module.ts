@@ -18,6 +18,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderMenuComponent } from './shared/header-menu/header-menu.component';
 import { MenubarModule } from 'primeng/menubar';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { MenubarModule } from 'primeng/menubar';
     HeaderComponent,
     FooterComponent,
     HeaderMenuComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

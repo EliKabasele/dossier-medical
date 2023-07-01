@@ -4,6 +4,7 @@
       pButton
       label="Se connecter"
       icon="pi pi-arrow-circle-right"
+      (click)="loginOrRegister('/login')"
       style="margin-left:.25em">
     </button>
 
@@ -11,6 +12,7 @@
       pButton label="Se deconnecter"
       icon="pi pi-power-off"
       style="margin-left:.25em"
+      (click)="loginOrRegister('/register')"
       class="p-button-secondary">
     </button>
 
