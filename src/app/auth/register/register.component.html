@@ -1,1 +1,94 @@
-<p>register works!</p>
+<p-card header="S'INSCRIRE">
+  <form [formGroup]="signUpForm" (ngSubmit)="handleSubmitForm()"
+   class="p-7 pt-3 pb-3 bg-blue-50 border-round-3xl">
+    <div class="gid">
+      <div class="col">
+        <div class="grid">
+          <!-- Name Input -->
+          <div class="col-4">
+            <label htmlFor="nomPrenom">
+              Nom et Prenom <span style="color: red;">*</span>
+            </label>
+          </div>
+          <div class="col-8 flex flex-column">
+            <input
+              type="text" 
+              id="nomPrenom"
+              formControlName="nomPrenom"
+              pInputText
+            >
+          </div>
+        </div>
+        <div class="grid">
+          <!-- Email Input -->
+          <div class="col-4">
+            <label htmlFor="email">
+               Adresse électronique <span style="color: red;">*</span>
+            </label>
+          </div>
+          <div class="col-8 flex flex-column">
+            <input
+              type="text" 
+              id="email"
+              formControlName="email"
+              pInputText
+            >
+          </div>
+        </div>
+        <div class="grid">
+          <!-- Password Input -->
+          <div class="col-4">
+            <label htmlFor="password">
+               Mot de passe <span style="color: red;">*</span>
+            </label>
+          </div>
+          <div class="col-8 flex flex-column">
+            <input
+              type="password" 
+              id="password"
+              formControlName="password"
+              pInputText
+            >
+          </div>
+        </div>
+        <div class="grid">
+          <!-- Role Input -->
+          <div class="col-4 mt-1">
+            <label htmlFor="role">
+               Role <span style="color: red;">*</span>
+            </label>
+          </div>
+          <div class="col-8 flex flex-column mt-1">
+            <div class="grid">
+              <div class="col-3">
+                <p-checkbox
+                  id="medecinCheckbox"
+                  value="Medecin"
+                  label="Medecin"
+                  formControlName="medecinCheckbox">
+                </p-checkbox>
+              </div>
+              <div class="col-3">
+                <p-checkbox
+                  id="patientCheckbox"
+                  value="Patient"
+                  label="Patient"
+                  formControlName="patientCheckbox">
+                </p-checkbox>
+              </div>
+            </div>           
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid " style="display: flex; justify-content: flex-end">
+      <p-button type="submit" styleClass="p-button-raised" label="S' inscrire" icon="pi pi-check"></p-button>
+      <p-button type="button" styleClass="p-button-raised" label="Anuler" icon="pi pi-times"
+        styleClass="p-button-secondary"
+        class="ml-3">
+      </p-button>
+    </div>
+ 
+  </form>
+</p-card>

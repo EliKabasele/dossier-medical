@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulaire-medical',
@@ -10,7 +11,7 @@ import { Validators } from '@angular/forms';
 export class FormulaireMedicalComponent implements OnInit {
   medicalForm: FormGroup;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.initMedicalForm();
@@ -18,6 +19,10 @@ export class FormulaireMedicalComponent implements OnInit {
 
   onSubmitForm() {
     console.log(this.medicalForm.value);
+  }
+
+  goBack() {
+    this.router.navigate(['/liste-dossiers']);
   }
 
   private initMedicalForm(): void {

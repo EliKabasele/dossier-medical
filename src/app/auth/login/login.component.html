@@ -1,39 +1,61 @@
-<p-card header="S'identifier">
+<p-card header="S'IDENTIFIER">
   <form [formGroup]="loginForm" (ngSubmit)="handleSubmitLoginForm()"
    class="p-7 pt-3 pb-3 bg-blue-50 border-round-3xl">
-    <div class="formgrid grid">
-      <!-- Email Input -->
-      <div class="field col">
-        <div class="flex flex-column gap-2">
-          <label htmlFor="email">Adresse électronique *</label>
-          <input
-            type="text" 
-            id="email"
-            formControlName="email"
-            pInputText 
-          >
-        </div >
-      </div>
-      <!-- Password Input -->
-      <div class="field col">
-        <div class="flex flex-column gap-2">
-          <label htmlFor="password">Mot de passe *</label>
-          <input
-            type="text" 
-            id="password"
-            formControlName="password"
-            pInputText
-          >
+    <div class="gid">
+      <div class="col">
+        <div class="grid">
+          <!-- Email Input -->
+          <div class="col-4">
+            <label htmlFor="email">
+               Adresse électronique <span style="color: red;">*</span>
+            </label>
+          </div>
+          <div class="col-8 flex flex-column">
+            <input
+              type="text" 
+              id="email"
+              formControlName="email"
+              pInputText
+            >
+          </div>
+        </div>
+        <div class="grid">
+          <!-- Password Input -->
+          <div class="col-4">
+            <label htmlFor="password">
+               Mot de passe <span style="color: red;">*</span>
+            </label>
+          </div>
+          <div class="col-8 flex flex-column">
+            <input
+              type="password" 
+              id="password"
+              formControlName="password"
+              pInputText
+            >
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="grid mt-3" style="display: flex; justify-content: flex-end">
-      <p-button type="submit" label="Envoyer" icon="pi pi-check"></p-button>
-      <p-button type="button" label="Anuler" icon="pi pi-times"
+    <div class="grid mt-2 " style="display: flex; justify-content: flex-end">
+      <p-button type="submit" styleClass="p-button-raised" label="Ouvrir une session" icon="pi pi-check"></p-button>
+      <p-button type="button" styleClass="p-button-raised" label="Anuler" icon="pi pi-times"
         styleClass="p-button-secondary"
-        class="ml-3"></p-button>
-  </div>
+        class="ml-3">
+      </p-button>
+    </div>
+    
+    <p-divider align="center">
+      <b style="color: red;">Vous n' avez pas encore de compte?</b>
+    </p-divider>
+    <div class="grid mt-2" style="display: flex; justify-content: center">
+      <p-button
+        styleClass="p-button-success p-button-raised"
+        type="button"
+        label="Inscrivez-vous"
+        icon="pi pi-check" (click)="navigateToSignUp()"></p-button>
+    </div>
 
   </form>
 </p-card>
