@@ -1,0 +1,22 @@
+<p-menubar [model]="items">
+  <div>
+    <p-button type="button"
+      
+      styleClass="p-button-raised"
+      label="Se connecter"
+      icon="pi pi-arrow-circle-right"
+      (click)="loginOrRegister('/login')"
+      >
+    </p-button>
+
+    <p-button type="button"
+      styleClass="p-button-raised p-button-secondary ml-3"
+      label="Se deconnecter"
+      icon="pi pi-power-off"
+      (click)="loginOrRegister('/register')"
+      class="">
+    </p-button>
+
+  </div>
+
+</p-menubar>
